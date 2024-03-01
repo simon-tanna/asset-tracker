@@ -9,13 +9,22 @@ const Home: NextPage = () => (
     <Text>The app is setup with the following:</Text>
     <UnorderedList pl="10px">
       <ListItem>
-        <Link href="https://nextjs.org/docs">Next.js</Link>
+        <Link href="https://nextjs.org/docs" target="_blank">
+          Next.js
+        </Link>
       </ListItem>
       <ListItem>
-        <Link href="https://chakra-ui.com/docs/getting-started">Chakra UI</Link>
+        <Link href="https://chakra-ui.com/docs/getting-started" target="_blank">
+          Chakra UI
+        </Link>
       </ListItem>
       <ListItem>
-        <Link href="https://react-query.tanstack.com/">React Query</Link>
+        <Link
+          href="https://tanstack.com/query/latest/docs/framework/react/overview"
+          target="_blank"
+        >
+          React Query
+        </Link>
       </ListItem>
     </UnorderedList>
   </Flex>
