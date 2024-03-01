@@ -2,14 +2,12 @@ import "@/styles/globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 
-import { appNavigation } from "@/constants";
-import { theme, AppNavigation } from "@/ui";
+import { theme } from "@/ui";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <ChakraProvider theme={theme}>
-      <AppNavigation navigationItems={appNavigation} />
-      <Component {...pageProps} />
-    </ChakraProvider>
-  );
-}
+const App = ({ Component, pageProps }: AppProps) => (
+  <ChakraProvider theme={theme}>
+    <Component {...pageProps} />
+  </ChakraProvider>
+);
+
+export default App;
