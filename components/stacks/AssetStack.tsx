@@ -8,7 +8,7 @@ import { useGetCoinAssets } from "@/helpers/getCoinAssets";
 import { AssetStackColumnFlex } from "@/ui/chakra-factories/Flex";
 
 const AssetStack = () => {
-  const { data: cryptoCurrencies, isLoading } = useGetCoinAssets(); //TODO: error handling
+  const { data: cryptoCurrencies, isLoading } = useGetCoinAssets({ limit: ASSET_QUERY_LIMIT }); //TODO: error handling
   return (
     <VStack>
       <AssetsHeader />

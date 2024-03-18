@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 import manifest from "../../../public/icons/manifest.json";
 
+import { ASSET_QUERY_LIMIT } from "@/constants/asset-attributes";
 import { Cryptocurrency } from "@/types/cmc-response";
 import { coinMarketCapApi } from "@/utils/axios";
 
@@ -23,8 +24,7 @@ interface ApiDataResponse {
 }
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const limit = 25;
-
+  const limit = parseInt(req.query.limit as string) || ASSET_QUERY_LIMIT;
   if (req.method === "GET") {
     try {
       const { data } = await coinMarketCapApi.get<ApiDataResponse>("/listings/latest", {
