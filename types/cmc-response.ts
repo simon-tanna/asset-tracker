@@ -32,3 +32,15 @@ export interface Cryptocurrency {
   total_supply: number;
   tvl_ratio: null;
 }
+
+export enum SortConditions {
+  MARKET_CAP = "market_cap",
+  PRICE = "price",
+  NAME = "name",
+  PERCENT_CHANGE = "percent_change_24h",
+}
+
+export enum SortDirection {
+  ASC = "asc",
+  DESC = "desc",
+}

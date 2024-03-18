@@ -1,14 +1,22 @@
-import { VStack, Flex, Skeleton } from "@chakra-ui/react";
+import { VStack, Skeleton } from "@chakra-ui/react";
 
 import Asset from "../cards/Asset";
 import AssetsHeader from "../headers/AssetsHeader";
 
 import { ASSET_QUERY_LIMIT } from "@/constants/asset-attributes";
 import { useGetCoinAssets } from "@/helpers/getCoinAssets";
+import { useSortStore } from "@/stores/useStortStore";
 import { AssetStackColumnFlex } from "@/ui/chakra-factories/Flex";
 
 const AssetStack = () => {
-  const { data: cryptoCurrencies, isLoading } = useGetCoinAssets({ limit: ASSET_QUERY_LIMIT }); //TODO: error handling
+  const { sortBy, sortDir } = useSortStore();
+
+  const { data: cryptoCurrencies, isLoading } = useGetCoinAssets({
+    limit: ASSET_QUERY_LIMIT,
+    sort: sortBy,
+    sortDir: sortDir,
+  });
+
   return (
     <VStack>
       <AssetsHeader />

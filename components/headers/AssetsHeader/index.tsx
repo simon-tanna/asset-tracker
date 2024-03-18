@@ -7,7 +7,11 @@ import { assetAttributes } from "@/constants/asset-attributes";
 const AssetsHeader = () => (
   <HStack spacing={10} width="370px" justifyContent="space-between">
     {assetAttributes.map((attribute) => (
-      <AssetAttribute key={attribute} attributeName={attribute} />
+      <AssetAttribute
+        key={attribute.text}
+        attributeName={attribute.text}
+        sortCondition={attribute.sortCondition}
+      />
     ))}
   </HStack>
 );

@@ -6,12 +6,6 @@ import { ASSET_QUERY_LIMIT } from "@/constants/asset-attributes";
 import { Cryptocurrency } from "@/types/cmc-response";
 import { coinMarketCapApi } from "@/utils/axios";
 
-type IconManifest = {
-  symbol: string;
-  name: string;
-  color: string;
-};
-
 interface ApiDataResponse {
   data: Cryptocurrency[];
   status: {
@@ -25,10 +19,12 @@ interface ApiDataResponse {
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const limit = parseInt(req.query.limit as string) || ASSET_QUERY_LIMIT;
+  const sort = req.query.sort as string;
+  const sortDir = req.query.sortDir as string;
   if (req.method === "GET") {
     try {
       const { data } = await coinMarketCapApi.get<ApiDataResponse>("/listings/latest", {
-        params: { limit },
+        params: { limit, sort, sort_dir: sortDir },
       });
 
       const formattedData = data.data.map((cryptoCurrency) => {
