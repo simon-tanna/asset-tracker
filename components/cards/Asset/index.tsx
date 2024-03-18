@@ -5,6 +5,8 @@ import Name from "./Name";
 import Price from "./Price";
 import Rank from "./Rank";
 
+import { AssetStackColumnFlex } from "@/ui/chakra-factories/Flex";
+
 interface AssetProps {
   ranking: number;
   name: string;
@@ -25,12 +27,12 @@ const formatNumber = (value: number) => {
 };
 
 const Asset = ({ ranking, name, image, marketCap, price, changePercentage }: AssetProps) => (
-  <Flex width="370px" height="60px" alignItems="center">
+  <AssetStackColumnFlex paddingX="15px">
     <Rank ranking={ranking} />
     <Name name={name} image={image} marketCap={formatNumber(marketCap)} />
     <Price price={price} />
     <Change changePercentage={changePercentage} />
-  </Flex>
+  </AssetStackColumnFlex>
 );
 
 export default Asset;
