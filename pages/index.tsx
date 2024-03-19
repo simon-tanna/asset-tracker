@@ -45,7 +45,7 @@ const Home: NextPage = () => {
   };
 
   return (
-    <Container maxWidth="container.lg" height="100vh">
+    <Container maxWidth="container.lg" height="100%">
       <VStack width="full" paddingY="50px">
         <HStack width="366px" justifyContent="space-between" height="100px">
           <Flex flexDirection="column" display={isOpen ? "none" : "flex"}>
