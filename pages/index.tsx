@@ -62,7 +62,7 @@ const Home: NextPage = () => {
           />
           <IconButton
             aria-label="Search"
-            icon={isOpen ? <CloseIcon /> : <SearchIcon />}
+            icon={isOpen ? <CloseIcon color="orange.50" /> : <SearchIcon color="orange.50" />}
             border="none"
             background="transparent"
             onClick={onToggle}

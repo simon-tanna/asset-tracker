@@ -19,11 +19,11 @@ const SearchAsset = ({
       <InputRightElement>
         <IconButton
           as={SearchIcon}
-          color="fg.muted"
           aria-label="button"
           size="xs"
           background="transparent"
           onClick={handleSubmit}
+          color="orange.50"
         />
       </InputRightElement>
       <Input placeholder="Search" value={inputSymbol} onChange={handleInputChange} />
