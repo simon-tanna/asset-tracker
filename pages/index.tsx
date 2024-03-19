@@ -68,12 +68,15 @@ const Home: NextPage = () => {
             onClick={onToggle}
           />
         </HStack>
+        {/* Don't show the full asset stack when search flow is in progress */}
         {!isOpen && <AssetStack />}
+        {/* Handle loading state of search */}
         {isOpen && isLoading && (
           <AssetStackColumnFlex>
             <Skeleton height="100%" width="100%" borderRadius="sm" />
           </AssetStackColumnFlex>
         )}
+        {/* Search result */}
         {data && (
           <Asset
             ranking={data.cmc_rank}
