@@ -22,7 +22,7 @@ const formatNumber = (value: number) => {
   } else if (value >= 1e6) {
     return `${(value / 1e6).toFixed(1)} Mn`;
   } else {
-    return value.toString(); // Handles values less than 1 million.
+    return value.toFixed(2);
   }
 };
 

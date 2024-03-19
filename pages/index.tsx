@@ -63,6 +63,8 @@ const Home: NextPage = () => {
           <IconButton
             aria-label="Search"
             icon={isOpen ? <CloseIcon /> : <SearchIcon />}
+            border="none"
+            background="transparent"
             onClick={onToggle}
           />
         </HStack>

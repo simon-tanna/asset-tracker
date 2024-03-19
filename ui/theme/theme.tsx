@@ -19,9 +19,9 @@ export const theme = extendTheme({
       },
       variants: {
         base: {
-          bg: "orange.50",
+          bg: "transaparent",
           fontSize: "md",
-          fontColor: "black",
+          fontColor: "orange.50",
         },
       },
     },

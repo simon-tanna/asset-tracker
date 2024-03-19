@@ -10,7 +10,9 @@ const Name = ({ image, name, marketCap }: NameProps) => (
   <HStack h="100%" justifyContent="flex-start" w="35%">
     <Image src={image} alt={name} maxHeight="80%" />
     <VStack alignItems="flex-start" spacing="3px">
-      <Heading fontSize="14px">{name}</Heading>
+      <Heading fontSize="14px" overflowWrap="anywhere" noOfLines={1}>
+        {name}
+      </Heading>
       <Text fontSize="11px">{marketCap}</Text>
     </VStack>
   </HStack>
